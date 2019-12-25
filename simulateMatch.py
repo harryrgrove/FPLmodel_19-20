@@ -5,16 +5,26 @@ from random import random
 
 
 def poisson(l, x):
-    return l**x * e**-l / factorial(x)
+    return l ** x * e ** -l / factorial(x)
 
 
 def resultProb(homeTeam, awayTeam, homeResult, awayResult, homeScored=0, awayScored=0, minutes=0):
-    lHome, lAway = homeScored + list(teamFDR.FDR[homeTeam]['offence']['home'].items())[-1][1]['form'] * list(teamFDR.FDR[awayTeam]['defence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (1 - (minutes / 90)), awayScored + list(teamFDR.FDR[homeTeam]['defence']['home'].items())[-1][1]['form'] * list(teamFDR.FDR[awayTeam]['offence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (1 - (minutes / 90))
+    lHome, lAway = homeScored + list(teamFDR.FDR[homeTeam]['offence']['home'].items())[-1][1]['form'] * \
+                   list(teamFDR.FDR[awayTeam]['defence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (
+                               1 - (minutes / 90)), awayScored + \
+                   list(teamFDR.FDR[homeTeam]['defence']['home'].items())[-1][1]['form'] * \
+                   list(teamFDR.FDR[awayTeam]['offence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (
+                               1 - (minutes / 90))
     return poisson(lHome, homeResult) * poisson(lAway, awayResult)
 
 
 def simulate(homeTeam, awayTeam, homeScored=0, awayScored=0, minutes=0):
-    lHome, lAway = homeScored + list(teamFDR.FDR[homeTeam]['offence']['home'].items())[-1][1]['form'] * list(teamFDR.FDR[awayTeam]['defence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (1 - (minutes / 90)), awayScored + list(teamFDR.FDR[homeTeam]['defence']['home'].items())[-1][1]['form'] * list(teamFDR.FDR[awayTeam]['offence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (1 - (minutes / 90))
+    lHome, lAway = homeScored + list(teamFDR.FDR[homeTeam]['offence']['home'].items())[-1][1]['form'] * \
+                   list(teamFDR.FDR[awayTeam]['defence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (
+                               1 - (minutes / 90)), awayScored + \
+                   list(teamFDR.FDR[homeTeam]['defence']['home'].items())[-1][1]['form'] * \
+                   list(teamFDR.FDR[awayTeam]['offence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (
+                               1 - (minutes / 90))
 
     homeProb, awayProb = 0, 0
     for homeGoals in range(100):
@@ -33,7 +43,10 @@ def simulate(homeTeam, awayTeam, homeScored=0, awayScored=0, minutes=0):
     print('Probability of each result at 90 mins:')
     resultProbMatrix = PrettyTable()
     resultProbMatrix.field_names = [homeTeam + ' win: ', 'Draw: ', awayTeam + ' win: ']
-    resultProbMatrix.add_row([str(homeProb * 100)[:str(homeProb * 100).find('.') + 3] + '%', str((1 - homeProb - awayProb) * 100)[:str((1 - homeProb - awayProb) * 100).find('.') + 3] + '%', str(awayProb * 100)[:str(awayProb * 100).find('.') + 3] + '%'])
+    resultProbMatrix.add_row([str(homeProb * 100)[:str(homeProb * 100).find('.') + 3] + '%',
+                              str((1 - homeProb - awayProb) * 100)[
+                              :str((1 - homeProb - awayProb) * 100).find('.') + 3] + '%',
+                              str(awayProb * 100)[:str(awayProb * 100).find('.') + 3] + '%'])
     print(resultProbMatrix, '\n' * 2)
 
     print('Most likely result at 90 mins:')
@@ -45,21 +58,34 @@ def simulate(homeTeam, awayTeam, homeScored=0, awayScored=0, minutes=0):
     print('Clean Sheet Probability')
     cleanSheetMatrix = PrettyTable()
     cleanSheetMatrix.field_names = [homeTeam, awayTeam]
-    cleanSheetMatrix.add_row([str(e**-lAway * 100)[:4] + '%', str(e**-lHome * 100)[:4] + '%'])
+    cleanSheetMatrix.add_row([str(e ** -lAway * 100)[:4] + '%', str(e ** -lHome * 100)[:4] + '%'])
     print(cleanSheetMatrix, '\n' * 2)
 
 
 def simulateCleanSheet(homeTeam, awayTeam, homeScored=0, awayScored=0, minutes=0):
-    lHome, lAway = homeScored + list(teamFDR.FDR[homeTeam]['offence']['home'].items())[-1][1]['form'] * list(teamFDR.FDR[awayTeam]['defence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (1 - (minutes / 90)), awayScored + list(teamFDR.FDR[homeTeam]['defence']['home'].items())[-1][1]['form'] * list(teamFDR.FDR[awayTeam]['offence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (1 - (minutes / 90))
-    return (e**-lAway, e**-lHome)
+    lHome, lAway = homeScored + list(teamFDR.FDR[homeTeam]['offence']['home'].items())[-1][1]['form'] * \
+                   list(teamFDR.FDR[awayTeam]['defence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (
+                               1 - (minutes / 90)), awayScored + \
+                   list(teamFDR.FDR[homeTeam]['defence']['home'].items())[-1][1]['form'] * \
+                   list(teamFDR.FDR[awayTeam]['offence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (
+                               1 - (minutes / 90))
+    return (e ** -lAway, e ** -lHome)
 
 
 def simulateGoals(homeTeam, awayTeam, homeScored=0, awayScored=0, minutes=0):
-    return (homeScored + list(teamFDR.FDR[homeTeam]['offence']['home'].items())[-1][1]['form'] * list(teamFDR.FDR[awayTeam]['defence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (1 - (minutes / 90)), awayScored + list(teamFDR.FDR[homeTeam]['defence']['home'].items())[-1][1]['form'] * list(teamFDR.FDR[awayTeam]['offence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (1 - (minutes / 90)))
+    return (homeScored + list(teamFDR.FDR[homeTeam]['offence']['home'].items())[-1][1]['form'] *
+            list(teamFDR.FDR[awayTeam]['defence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (
+                        1 - (minutes / 90)),
+            awayScored + list(teamFDR.FDR[homeTeam]['defence']['home'].items())[-1][1]['form'] *
+            list(teamFDR.FDR[awayTeam]['offence']['away'].items())[-1][1]['form'] * teamFDR.meanxG * (
+                        1 - (minutes / 90)))
 
 
 def randResult(homeTeam, awayTeam):
-    lHome, lAway = list(teamFDR.FDR[homeTeam]['offence']['home'].items())[-1][1]['form'] * list(teamFDR.FDR[awayTeam]['defence']['away'].items())[-1][1]['form'] * teamFDR.meanxG, list(teamFDR.FDR[homeTeam]['defence']['home'].items())[-1][1]['form'] * list(teamFDR.FDR[awayTeam]['offence']['away'].items())[-1][1]['form'] * teamFDR.meanxG
+    lHome, lAway = list(teamFDR.FDR[homeTeam]['offence']['home'].items())[-1][1]['form'] * \
+                   list(teamFDR.FDR[awayTeam]['defence']['away'].items())[-1][1]['form'] * teamFDR.meanxG, \
+                   list(teamFDR.FDR[homeTeam]['defence']['home'].items())[-1][1]['form'] * \
+                   list(teamFDR.FDR[awayTeam]['offence']['away'].items())[-1][1]['form'] * teamFDR.meanxG
     hRand, aRand, hGoals, aGoals, hProb, aProb, homeFinished, awayFinished = random(), random(), 0, 0, 0, 0, False, False
     while homeFinished == False or awayFinished == False:
         hProb += poisson(lHome, hGoals)
