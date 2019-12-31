@@ -138,7 +138,7 @@ def FDR(DB, offenceSD=5, defenceSD=10, dsv=1,
     return FDRMatrix
 
 
-FDR = FDR(performanceDB, 5, 10, 0.8)
+FDR = FDR(performanceDB, 10, 10, 0.8)
 
 
 def meanFDR(FDRMatrix):  # Calculates the mean fixture difficulty of each team given a season FDR
