@@ -1,8 +1,9 @@
 from teamFDR import teams
-from simulateMatch import simulateCleanSheet
+from simulateMatch import simulateCleanSheet, poisson
 from simulatePlayer import simulateReturns, xAConstant
 from getPlayer import getPlayer, playerNames, getPosition
 from random import random
+import numpy as np
 
 lineups = {team: [] for team in teams}
 for team in teams:
@@ -25,8 +26,8 @@ def simulateBonus(homeTeam, awayTeam, SD):
     for repeat in range(trials):
         homeBPS, awayBPS = {player: 0 for player in homeLineup}, {player: 0 for player in awayLineup}
         for player in homeLineup:
-            goal = random()
-            if goal < xReturns[player][0]:
+            goals = np.random.poisson(xReturns[player][0])
+            for goal in range(goals):
                 homeBPS[player] += {'GKP': 12, 'DEF': 12, 'MID': 18, 'FOR': 24}[xReturns[player][2]]
                 if random() < xAConstant:
                     assist = [[player, xReturns[player][1]] for player in [i for i in homeLineup if i != player]]
@@ -41,9 +42,9 @@ def simulateBonus(homeTeam, awayTeam, SD):
                            xReturns[player][2] == 'GKP' or xReturns[player][2] == 'DEF']:
                 homeBPS[player] += 12
 
-        for player in awayBPS:
-            goal = random()
-            if goal < xReturns[player][0]:
+        for player in awayLineup:
+            goals = np.random.poisson(xReturns[player][0])
+            for goal in range(goals):
                 awayBPS[player] += {'GKP': 12, 'DEF': 12, 'MID': 18, 'FOR': 24}[xReturns[player][2]]
                 if random() < xAConstant:
                     assist = [[player, xReturns[player][1]] for player in [i for i in awayLineup if i != player]]
