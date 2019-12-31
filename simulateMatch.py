@@ -103,4 +103,4 @@ def randResult(homeTeam, awayTeam):
 
 if __name__ == '__main__':
     print('\n' * 2)
-    simulate('Sheffield United', 'Watford', 0, 0, 0)
+    simulate('Wolverhampton Wanderers', 'Manchester City', 0, 0, 0)
