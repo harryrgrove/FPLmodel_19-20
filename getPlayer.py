@@ -119,7 +119,7 @@ playerNames = [
      'team': 'Bournemouth'},
     {'fpl': 37, 'name': 'Shane Duffy', 'understat': 6047, 'position': 'DEF', 'starter': False, 'team': 'Brighton'},
     {'fpl': 38, 'name': 'Martín Montoya', 'understat': 1950, 'position': 'DEF', 'starter': False, 'team': 'Brighton'},
-    {'fpl': 39, 'name': 'Bernardo Fernandes da Silva Junior', 'understat': 5245, 'position': 'DEF', 'starter': False,
+    {'fpl': 39, 'name': 'Bernardo Fernandes', 'understat': 5245, 'position': 'DEF', 'starter': False,
      'team': 'Brighton'},
     {'fpl': 40, 'name': 'Leon Balogun', 'understat': 394, 'position': 'DEF', 'starter': False, 'team': 'Brighton'},
     {'fpl': 41, 'name': 'Gaëtan Bong', 'understat': 6105, 'position': 'DEF', 'starter': False, 'team': 'Brighton'},
@@ -203,7 +203,7 @@ playerNames = [
     {'fpl': 116, 'name': 'Callum Hudson-Odoi', 'understat': 6456, 'position': 'MID', 'starter': False,
      'team': 'Chelsea'},
     {'fpl': 117, 'name': 'Ross Barkley', 'understat': 592, 'position': 'MID', 'starter': False, 'team': 'Chelsea'},
-    {'fpl': 118, 'name': 'Jorginho', 'understat': 1389, 'position': 'MID', 'starter': False, 'team': 'Chelsea'},
+    {'fpl': 118, 'name': 'Jorginho', 'understat': 5741, 'position': 'MID', 'starter': False, 'team': 'Chelsea'},
     {'fpl': 119, 'name': "N'Golo Kanté", 'understat': 751, 'position': 'MID', 'starter': False, 'team': 'Chelsea'},
     {'fpl': 121, 'name': 'Ethan Ampadu', 'understat': 6369, 'position': 'MID', 'starter': False, 'team': 'Chelsea'},
     {'fpl': 431, 'name': 'Christian Pulisic', 'understat': 2662, 'position': 'MID', 'starter': False,
@@ -327,7 +327,7 @@ playerNames = [
     {'fpl': 176, 'name': 'Wilfred Ndidi', 'understat': 5545, 'position': 'MID', 'starter': False, 'team': 'Leicester'},
     {'fpl': 177, 'name': 'Matty James', 'understat': 4441, 'position': 'MID', 'starter': False, 'team': 'Leicester'},
     {'fpl': 178, 'name': 'Daniel Amartey', 'understat': 759, 'position': 'MID', 'starter': False, 'team': 'Leicester'},
-    {'fpl': 179, 'name': 'Nampalys Mendy', 'understat': 3389, 'position': 'MID', 'starter': False, 'team': 'Leicester'},
+    {'fpl': 179, 'name': 'Nampalys Mendy', 'understat': 1785, 'position': 'MID', 'starter': False, 'team': 'Leicester'},
     {'fpl': 180, 'name': 'Hamza Choudhury', 'understat': 6418, 'position': 'MID', 'starter': False,
      'team': 'Leicester'},
     {'fpl': 265, 'name': 'Ayoze Pérez', 'understat': 770, 'position': 'MID', 'starter': False, 'team': 'Leicester'},
@@ -844,7 +844,7 @@ playerNames = [
      'team': 'Wolverhampton Wanderers'}]
 
 
-def getPlayer(title, inp, outp):
+def getPlayer(title, inp='name', outp='understat'):
     accenteds = ['é', 'ê', 'ë', 'ü', 'ú', 'î', 'ï', 'í', 'ì', 'ô', 'ö', 'ò', 'ó', 'ø', 'õ', 'œ', 'à', 'á', 'â', 'ä',
                  'ã', 'æ', 'ß', 'ś', 'š', 'ł', 'ž', 'ź', 'ç', 'ć', 'č', 'ñ', 'ń']
     correspondings = ['e', 'e', 'e', 'u', 'u', 'i', 'i', 'i', 'i', 'o', 'o', 'o', 'o', 'o', 'o', 'oe', 'a', 'a', 'a',
@@ -890,49 +890,48 @@ def lineup(teamName, playerList):
                 break
 
 
-lineup('Arsenal',
-       ['Leno', 'Maitland-Niles', 'Mustafi', 'David Luiz', 'Bukayo Saka', 'Torreira', 'Guendouzi', 'Nelson', 'Ozil',
-        'Aubameyang', 'Lacazette'])
+lineup('Arsenal', ['Leno', 'Maitland-Niles', 'Sokratis', 'David Luiz', 'Kolasinac', 'Torreira', 'Xhaka', 'Pepe', 'Ozil',
+                   'Aubameyang', 'Lacazette'])
 lineup('Aston Villa',
-       ['Heaton', 'El Mohamady', 'Engels', 'Hause', 'Targett', 'Hourihane', 'Douglas Luiz', 'Grealish', 'Trézéguet',
-        'Wesley Moraes', 'El Ghazi'])
+       ['Heaton', 'Konsa', 'Mings', 'Hause', 'Guilbert', 'Douglas Luiz', 'Nakamba', 'Neil Taylor', 'Trézéguet',
+        'Wesley Moraes', 'Grealish'])
 lineup('Bournemouth',
-       ['Ramsdale', 'Stacey', 'Steve Cook', 'Mepham', 'Diego Rico', 'Billing', 'Lerma', 'Gosling', 'Ryan Fraser',
-        'Callum Wilson', 'Joshua King'])
+       ['Ramsdale', 'simon Francis', 'Steve Cook', 'Mepham', 'Diego Rico', 'Stanislas', 'Lerma', 'Gosling',
+        'Ryan Fraser', 'Callum Wilson', 'Solanke'])
 lineup('Brighton',
-       ['Mathew Ryan', 'Montoya', 'Webster', 'Dunk', 'Dan Burn', 'Propper', 'Dale Stephens', 'Mooy', 'Gross', 'Maupay',
-        'Trossard'])
+       ['Mathew Ryan', 'Montoya', 'Webster', 'Dunk', 'Bernardo Fernandes', 'Propper', 'Dale Stephens', 'Trossard',
+        'Maupay', 'Connolly'])
 lineup('Burnley', ['Pope', 'Bardsley', 'Tarkowski', 'Mee', 'Charlie Taylor', 'Hendrick', 'Westwood', 'Cork', 'Mcneil',
                    'Chris Wood', 'Ashley Barnes'])
 lineup('Chelsea',
-       ['Kepa', 'Azpilicueta', 'Rudiger', 'Zouma', 'Emerson', 'Kante', 'Jorginho', 'Kovacic', 'Willian', 'Abraham',
-        'Mount'])
+       ['Kepa', 'Reece James', 'Rudiger', 'Zouma', 'Azpilicueta', 'Kante', 'Kovacic', 'Willian', 'Mount', 'Pulisic',
+        'Abraham'])
 lineup('Crystal Palace',
-       ['Guaita', 'Martin Kelly', 'Tomkins', 'Sakho', 'Riedewald', 'McArthur', 'Milivojevic', 'Kouyaté', 'Meyer',
-        'Ayew', 'Zaha'])
+       ['Guaita', 'Martin Kelly', 'Tomkins', 'Kouyaté', 'Riedewald', 'james McCarthy', 'Milivojevic', 'McArthur',
+        'Meyer', 'Ayew', 'Zaha'])
 lineup('Everton',
-       ['Pickford', 'Coleman', 'Yerry Mina', 'Holgate', 'Sidibé', 'Delph', 'Sigurdsson', 'Digne', 'Richarlison',
-        'Calvert-Lewin', 'Bernard Anício'])
+       ['Pickford', 'Coleman', 'Yerry Mina', 'Holgate', 'Sidibé', 'tom Davies', 'Delph', 'Digne', 'Sigurdsson',
+        'Calvert-Lewin', 'Richarlison'])
 lineup('Leicester', ['Schmeichel', 'Ricardo', 'Evans', 'Soyuncu', 'Chilwell', 'Ndidi', 'Perez', 'Tielemans', 'Maddison',
-                     'Harvey Barnes', 'Vardy'])
+                     'Demarai Gray', 'Vardy'])
 lineup('Liverpool',
        ['Alisson', 'Alexander-Arnold', 'Van Dijk', 'Gomez', 'Robertson', 'Milner', 'Wijnaldum', 'Keita', 'Firmino',
         'Mane', 'Salah'])
 lineup('Manchester City',
-       ['Ederson', 'Cancelo', 'Otamendi', 'Fernandinho', 'Benjamin Mendy', 'De Bruyne', 'Rodrigo', 'Bernardo Silva',
-        'Mahrez', 'Aguero', 'Sterling'])
+       ['Ederson', 'Walker', 'Stones', 'Fernandinho', 'Benjamin Mendy', 'De Bruyne', 'Rodrigo', 'David Silva', 'Mahrez',
+        'Aguero', 'Sterling'])
 lineup('Manchester United',
-       ['De Gea', 'Wan-Bissaka', 'Lindelöf', 'Maguire', 'Brandon Williams', 'Frederico Rodrigues', 'Matic',
-        'Daniel James', 'Andreas Pereira', 'Martial', 'Rashford'])
+       ['De Gea', 'Wan-Bissaka', 'Lindelöf', 'Maguire', 'Shaw', 'Frederico Rodrigues', 'Matic', 'Daniel James',
+        'Andreas Pereira', 'Martial', 'Rashford'])
 lineup('Newcastle United',
-       ['Dubravka', 'Yedlin', 'Schar', 'Fernández', 'Lejeune', 'Willems', 'Hayden', 'Shelvey', 'Almiron', 'Carroll',
+       ['Dubravka', 'Manquillo', 'Schar', 'Fernández', 'Lejeune', 'Willems', 'Hayden', 'Shelvey', 'Almiron', 'Carroll',
         'Joelinton'])
 lineup('Norwich',
-       ['Krul', 'Maximillian Aarons', 'Zimmermann', 'Hanley', 'Jamal Lewis', 'Tettey', 'Vrancic', 'Buendía', 'McLean',
+       ['Krul', 'Maximillian Aarons', 'Zimmermann', 'Hanley', 'Byram', 'Tettey', 'Vrancic', 'Buendía', 'McLean',
         'Cantwell', 'Pukki'])
 lineup('Sheffield United',
        ['Dean Henderson', 'Basham', 'Egan', "O'Connell", 'Baldock', 'Lundstram', 'Norwood', 'Fleck', 'Stevens',
-        'McBurnie', 'McGoldrick'])
+        'Mousset', 'McGoldrick'])
 lineup('Southampton',
        ['Alex McCarthy', 'Cedric', 'Bednarek', 'Bertrand', 'Ward-Prowse', 'Hojbjerg', 'Armstrong', 'Redmond', 'Adams',
         'Danny Ings'])
