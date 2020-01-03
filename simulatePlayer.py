@@ -18,6 +18,8 @@ with open('matchDB.json', 'r') as fp:
 with open('fixtureDB.json', 'r') as fp:
     fixtureDB = json.load(fp)
 
+playerDB['Manchester City']['618']['11832']['xG'] -= 0.61 + 0.75
+playerDB['Liverpool']['838']['11847']['xG'] -= 0.85
 xAConstant = np.mean(
     [(matchInfo['hxA'] / matchInfo['hxG'] + matchInfo['axA'] / matchInfo['axG']) / 2 for matchID, matchInfo in
      matchDB.items()])
@@ -136,33 +138,7 @@ def simulateFixtures(playerName, fixtureCount, SD=5):
     points = []
     for matchID, matchInfo in dict(fixtures).items():
         points.append(float(str(
-            simulatePts(position, playerName, 'home' * (matchInfo['loc'] == 'h') + 'away' * (matchInfo['loc'] == 'a'),
-                        matchInfo['opponent'], SD))[:4]))
-    return points
-
-
-def simulateFixtures(playerName, fixtureCount, SD=5):
-    playerTeam = 'Norwich'
-    if type(playerName) == str:
-        playerName = getPlayer(playerName, 'name', 'understat')
-    for team, players in playerDB.items():
-        for player in players:
-            if player == str(playerName):
-                playerTeam = team
-                break
-        else:
-            continue
-        break
-
-    for player in playerNames:
-        if player['understat'] == playerName:
-            position = player['position']
-            break
-    fixtures = list(OrderedDict(fixtureDB[playerTeam]).items())[:fixtureCount]
-    points = []
-    for matchID, matchInfo in dict(fixtures).items():
-        points.append(float(str(
-            simulatePts(position, playerName, 'home' * (matchInfo['loc'] == 'h') + 'away' * (matchInfo['loc'] == 'a'),
+            simulatePts(position, playerName, 'h' * (matchInfo['loc'] == 'h') + 'a' * (matchInfo['loc'] == 'a'),
                         matchInfo['opponent'], SD))[:4]))
     return points
 
