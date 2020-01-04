@@ -84,11 +84,11 @@ if __name__ == '__main__':
     print('\n' * 2)
     print(sorted(list(simulateBonus('Leicester', 'West Ham', 10).items()), key=lambda x: x[1], reverse=True))
     print('\n' * 2)
-    playerpoo = []
+    baselineArray = []
     for team in teams:
         for player in baselineDB[team]:
-            playerpoo.append((int(player), baselineDB[team][player][0]))
-    for i in sorted(playerpoo, key=lambda i: i[1], reverse=True):
+            baselineArray.append((int(player), baselineDB[team][player][0]))
+    for i in sorted(baselineArray, key=lambda i: i[1], reverse=True):
         if i[1] != 0 or i[0] == 5675:
             print(getPlayer(i[0], 'understat', 'name') + '.' * (40 - len(getPlayer(i[0], 'understat', 'name'))) + str(
                 round(i[1], 1)))
