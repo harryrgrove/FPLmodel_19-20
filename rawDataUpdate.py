@@ -11,8 +11,9 @@ def rawDataUpdate():
     import json
     from time import time
     from understat import Understat
+    from fpl import FPL
     from collections import OrderedDict
-    from getPlayer import getPlayer, getPosition, playerNames
+    from getPlayer import getPlayer, getPosition, playerNames, isStarter, blacklist
     import numpy as np
     import csv
     import requests
@@ -29,6 +30,34 @@ def rawDataUpdate():
     fixtureDB = {team: {'location': location, 'opponent': opponent, gw': gw}}
 
     """
+
+    def getPrice(title, inp='fpl'):
+        if inp == 'understat' or inp == 'name':
+            title = getPlayer(title, inp, 'fpl')
+            print(title)
+
+        async def main():
+            async with aiohttp.ClientSession() as session:
+                fpl = FPL(session)
+                await fpl.login(email='jameshpalmer2000', password='1')
+                player = await fpl.get_player(title, return_json=True)
+                global price
+                price = (player['now_cost'] / 10)
+
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(main())  # Closes connection with server
+        return price
+
+    with open('xPtsDB.json', 'r') as fp:
+        xPtsDB = json.load(fp)
+    priceDB = {}
+    for player in xPtsDB['38']:
+        if isStarter(int(player), 'understat') == True and int(player) not in blacklist:
+            print(player)
+            priceDB[player] = getPrice(int(player), 'understat')
+    print(priceDB)
+    with open('priceDB.json', 'w') as fp:
+        json.dump(priceDB, fp)
 
     async def main():
         async with aiohttp.ClientSession() as session:
