@@ -71,7 +71,12 @@ def simulatePts(position, playerName, loc, opponent, SD=5):
             xPts = teamxG * xGProportion * 5 + teamxA * xAProportion * 3 + csProb + 2
         else:
             xPts = teamxG * xGProportion * 4 + teamxA * xAProportion * 3 + 2
-        return xPts
+
+        yellows = 0
+        if len(matchesTrue) > 2:
+            for matchIndex, matchInfo in matchesTrue.items():
+                yellows += int(matchInfo['yellows'])
+        return xPts - max(yellows / len(matchesTrue), 0.1)
     return 2.001
 
 
@@ -214,3 +219,7 @@ def simulateTeamFixtures(playerDict, n=1, SD=5):
         print(i + 21)
         s += simulateTeam(pDict, i + 1, SD)
     return s
+
+
+if __name__ == '__main__':
+    print(simulatePts('FOR', getPlayer('Vardy'), 'h', 'Aston Villa'))
