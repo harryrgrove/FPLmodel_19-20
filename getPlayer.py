@@ -36,7 +36,7 @@ playerNames = [
     {"fpl": 488, "name": "Nicolas Pépé", "understat": 5656, "position": "MID", "starter": False, "team": "Arsenal"},
     {"fpl": 489, "name": "Reiss Nelson", "understat": 6492, "position": "MID", "starter": False, "team": "Arsenal"},
     {"fpl": 490, "name": "Joseph Willock", "understat": 6630, "position": "MID", "starter": False, "team": "Arsenal"},
-    {"fpl": 504, "name": "Gabriel Teodoro Martinelli Silva", "understat": 7752, "position": "FOR", "starter": False,
+    {"fpl": 504, "name": "Gabriel Martinelli", "understat": 7752, "position": "FOR", "starter": False,
      "team": "Arsenal"},
     {"fpl": 515, "name": "Kieran Tierney", "understat": 8089, "position": "DEF", "starter": False, "team": "Arsenal"},
     {"fpl": 541, "name": "Bukayo Saka", "understat": 7322, "position": "MID", "starter": False, "team": "Arsenal"},
@@ -62,6 +62,7 @@ playerNames = [
      "team": "Aston Villa"},
     {"fpl": 36, "name": "Trézéguet", "understat": 2132, "position": "MID", "starter": False, "team": "Aston Villa"},
     {"fpl": 94, "name": "Tom Heaton", "understat": 1651, "position": "GKP", "starter": False, "team": "Aston Villa"},
+    {"fpl": 603, "name": "José Reina", "understat": 1374, "position": "GKP", "starter": False, "team": "Aston Villa"},
     {"fpl": 309, "name": "Matt Targett", "understat": 884, "position": "DEF", "starter": False, "team": "Aston Villa"},
     {"fpl": 428, "name": "Wesley Moraes", "understat": 7724, "position": "FOR", "starter": False,
      "team": "Aston Villa"},
@@ -78,6 +79,8 @@ playerNames = [
     {"fpl": 474, "name": "Lovre Kalinic", "understat": None, "position": "GKP", "starter": False,
      "team": "Aston Villa"},
     {"fpl": 491, "name": "Marvelous Nakamba", "understat": 8040, "position": "MID", "starter": False,
+     "team": "Aston Villa"},
+    {"fpl": 613, "name": "Mbwana Samatta", "understat": 69696969, "position": "FOR", "starter": False,
      "team": "Aston Villa"},
     {"fpl": 58, "name": "Steve Cook", "understat": 458, "position": "DEF", "starter": False, "team": "Bournemouth"},
     {"fpl": 59, "name": "Nathan Akê", "understat": 579, "position": "DEF", "starter": False, "team": "Bournemouth"},
@@ -177,7 +180,8 @@ playerNames = [
     {"fpl": 100, "name": "Jeff Hendrick", "understat": 1746, "position": "MID", "starter": False, "team": "Burnley"},
     {"fpl": 101, "name": "Ashley Westwood", "understat": 669, "position": "MID", "starter": False, "team": "Burnley"},
     {"fpl": 102, "name": "Jack Cork", "understat": 712, "position": "MID", "starter": False, "team": "Burnley"},
-    {"fpl": 120, "name": "Daniel Drinkwater", "understat": 752, "position": "MID", "starter": False, "team": "Burnley"},
+    {"fpl": 120, "name": "Daniel Drinkwater", "understat": 752, "position": "MID", "starter": False,
+     "team": "Aston Villa"},
     {"fpl": 430, "name": "Aaron Lennon", "understat": 593, "position": "MID", "starter": False, "team": "Burnley"},
     {"fpl": 447, "name": "Erik Pieters", "understat": 887, "position": "DEF", "starter": False, "team": "Burnley"},
     {"fpl": 451, "name": "Jay Rodriguez", "understat": 844, "position": "FOR", "starter": False, "team": "Burnley"},
@@ -488,6 +492,8 @@ playerNames = [
      "team": "Manchester United"},
     {"fpl": 549, "name": "Brandon Williams", "understat": 8075, "position": "DEF", "starter": False,
      "team": "Manchester United"},
+    {"fpl": 618, "name": "Bruno Fernandes", "understat": 1228, "position": "MID", "starter": False,
+     "team": "Manchester United"},
     {"fpl": 251, "name": "Matt Ritchie", "understat": 461, "position": "DEF", "starter": False,
      "team": "Newcastle United"},
     {"fpl": 252, "name": "Fabian Schär", "understat": 76, "position": "DEF", "starter": False,
@@ -549,6 +555,8 @@ playerNames = [
      "team": "Newcastle United"},
     {"fpl": 573, "name": "Robert Elliot", "understat": 763, "position": "GKP", "starter": False,
      "team": "Newcastle United"},
+    {"fpl": 612, "name": "Nabil Bentaleb", "understat": 914, "position": "MID", "starter": False,
+     "team": "Newcastle United"},
     {"fpl": 272, "name": "Timm Klose", "understat": 162, "position": "DEF", "starter": False, "team": "Norwich"},
     {"fpl": 273, "name": "Ben Godfrey", "understat": 7689, "position": "DEF", "starter": False, "team": "Norwich"},
     {"fpl": 274, "name": "Maximillian Aarons", "understat": 7688, "position": "DEF", "starter": False,
@@ -559,6 +567,7 @@ playerNames = [
     {"fpl": 277, "name": "Grant Hanley", "understat": 7690, "position": "DEF", "starter": False, "team": "Norwich"},
     {"fpl": 278, "name": "Teemu Pukki", "understat": 7696, "position": "FOR", "starter": False, "team": "Norwich"},
     {"fpl": 279, "name": "Dennis Srbeny", "understat": 7822, "position": "FOR", "starter": False, "team": "Norwich"},
+    {"fpl": 601, "name": "Ondrej Duda", "understat": 5240, "position": "MID", "starter": False, "team": "Norwich"},
     {"fpl": 280, "name": "Tim Krul", "understat": 982, "position": "GKP", "starter": False, "team": "Norwich"},
     {"fpl": 281, "name": "Michael McGovern", "understat": 8022, "position": "GKP", "starter": False, "team": "Norwich"},
     {"fpl": 282, "name": "Mario Vrancic", "understat": 12, "position": "MID", "starter": False, "team": "Norwich"},
@@ -577,9 +586,10 @@ playerNames = [
     {"fpl": 454, "name": "Sam Byram", "understat": 902, "position": "DEF", "starter": False, "team": "Norwich"},
     {"fpl": 484, "name": "Philip Heise", "understat": 70, "position": "DEF", "starter": False, "team": "Norwich"},
     {"fpl": 507, "name": "Ibrahim Amadou", "understat": 3358, "position": "MID", "starter": False, "team": "Norwich"},
-    {"fpl": 538, "name": "Adam Idah", "understat": None, "position": "FOR", "starter": False, "team": "Norwich"},
+    {"fpl": 538, "name": "Adam Idah", "understat": 8021, "position": "FOR", "starter": False, "team": "Norwich"},
     {"fpl": 551, "name": "Archie Mair", "understat": None, "position": "GKP", "starter": False, "team": "Norwich"},
     {"fpl": 552, "name": "Akin Famewo", "understat": None, "position": "DEF", "starter": False, "team": "Norwich"},
+    {"fpl": 602, "name": "Lucas Rupp", "understat": 62, "position": "MID", "starter": False, "team": "Norwich"},
     {"fpl": 70, "name": "Lys Mousset", "understat": 1748, "position": "FOR", "starter": False,
      "team": "Sheffield United"},
     {"fpl": 291, "name": "Enda Stevens", "understat": 7707, "position": "DEF", "starter": False,
@@ -681,6 +691,8 @@ playerNames = [
     {"fpl": 535, "name": "Daniel N'Lundulu", "understat": None, "position": "FOR", "starter": False,
      "team": "Southampton"},
     {"fpl": 548, "name": "Harry Lewis", "understat": None, "position": "GKP", "starter": False, "team": "Southampton"},
+    {"fpl": 583, "name": "Japhet Tanganga", "understat": 8222, "position": "DEF", "starter": False,
+     "team": "Tottenham"},
     {"fpl": 329, "name": "Ben Davies", "understat": 660, "position": "DEF", "starter": False, "team": "Tottenham"},
     {"fpl": 330, "name": "Jan Vertonghen", "understat": 640, "position": "DEF", "starter": False, "team": "Tottenham"},
     {"fpl": 331, "name": "Toby Alderweireld", "understat": 639, "position": "DEF", "starter": False,
@@ -747,6 +759,7 @@ playerNames = [
     {"fpl": 374, "name": "Nathaniel Chalobah", "understat": 1677, "position": "MID", "starter": False,
      "team": "Watford"},
     {"fpl": 375, "name": "Domingos Quina", "understat": 5573, "position": "MID", "starter": False, "team": "Watford"},
+    {"fpl": 604, "name": "Ignacio Pussetto", "understat": 6997, "position": "MID", "starter": False, "team": "Watford"},
     {"fpl": 439, "name": "Craig Dawson", "understat": 804, "position": "DEF", "starter": False, "team": "Watford"},
     {"fpl": 512, "name": "Danny Welbeck", "understat": 501, "position": "FOR", "starter": False, "team": "Watford"},
     {"fpl": 513, "name": "Heurelho da Silva Gomes", "understat": 564, "position": "GKP", "starter": False,
@@ -771,6 +784,7 @@ playerNames = [
     {"fpl": 387, "name": "Alexandre Nascimento Costa Silva", "understat": None, "position": "FOR", "starter": False,
      "team": "West Ham"},
     {"fpl": 388, "name": "Lukasz Fabianski", "understat": 706, "position": "GKP", "starter": False, "team": "West Ham"},
+    {"fpl": 606, "name": "Darren Randolph", "understat": 540, "position": "GKP", "starter": False, "team": "West Ham"},
     {"fpl": 389, "name": "Michail Antonio", "understat": 531, "position": "MID", "starter": False, "team": "West Ham"},
     {"fpl": 390, "name": "Felipe Anderson", "understat": 1208, "position": "MID", "starter": False, "team": "West Ham"},
     {"fpl": 391, "name": "Manuel Lanzini", "understat": 535, "position": "MID", "starter": False, "team": "West Ham"},
@@ -836,7 +850,7 @@ playerNames = [
      "team": "Wolverhampton Wanderers"},
     {"fpl": 487, "name": "Patrick Cutrone", "understat": 4918, "position": "FOR", "starter": False,
      "team": "Wolverhampton Wanderers"},
-    {"fpl": 528, "name": "Pedro Lomba Neto", "understat": None, "position": "MID", "starter": False,
+    {"fpl": 528, "name": "Pedro Lomba Neto", "understat": 6382, "position": "MID", "starter": False,
      "team": "Wolverhampton Wanderers"},
     {"fpl": 559, "name": "Bernard Ashley-Seal", "understat": None, "position": "FOR", "starter": False,
      "team": "Wolverhampton Wanderers"},
@@ -925,65 +939,63 @@ def isStarter(title, inp='name'):
             return playerInfo['starter']
 
 
-blacklist = ['Aguero', 'Mahrez', 'Mousset', 'McGoldrick', 'David Silva', 'pulisic', 'Walker', 'Benjamin Mendy',
-             'Trossard', 'Michail Antonio', 'Shane Long', 'Reece James', 'Brandon Williams', 'Solanke', 'Mepham',
-             'Sterling', 'Maguire']
-blacklist = [getPlayer(i, 'name', 'understat') for i in blacklist]
+blacklist = [getPlayer(i, 'name', 'understat') for i in
+             ['McGoldrick', 'Walker', 'Sterling', 'David Silva', 'Benjamin Mendy', 'Aguero', 'Otamendi', 'Shane Long',
+              'Mahrez', 'Stones', 'Sidibé', 'Felipe Anderson', 'Baines', 'Fornals', 'Yerry Mina', 'Gabriel Jesus',
+              'Lundstram', 'Martinelli', 'Lamela', 'Michail Antonio']]
 
-lineup("Arsenal", ["Leno", "Maitland-Niles", "Sokratis", "David Luiz", "Kolasinac", "Torreira", "Xhaka", "Pepe", "Ozil",
-                   "Aubameyang", "Lacazette"])
+lineup("Arsenal",
+       ["Leno", "Bellerín", "Sokratis", "David Luiz", "Bukayo Saka", "Torreira", "Xhaka", "Pepe", "Ozil", "Lacazette",
+        "Aubameyang"])
 lineup("Aston Villa",
-       ["Nyland", "Konsa", "Mings", "Hause", "Guilbert", "Douglas Luiz", "Nakamba", "Neil Taylor", "Trézéguet",
-        "El Ghazi", "Grealish"])
+       ["Reina", "Konsa", "Mings", "Hause", "Guilbert", "Douglas Luiz", "Nakamba", "Targett", "Samatta", "El Ghazi",
+        "Grealish"])
 lineup("Bournemouth",
-       ["Ramsdale", "simon Francis", "Steve Cook", "Simpson", "Diego Rico", "Harry Wilson", "Lerma", "Gosling",
-        "Ryan Fraser", "Callum Wilson", "Solanke"])
+       ["Ramsdale", "Adam Smith", "Steve Cook", "Nathan Aké", "Diego Rico", "Lerma", "Billing", "Solanke",
+        "Ryan Fraser", "Callum Wilson", "Harry Wilson"])
 lineup("Brighton",
-       ["Mathew Ryan", "Montoya", "Webster", "Dunk", "Bernardo Fernandes", "Propper", "Dale Stephens", "Alzate",
-        "Jahanbakhsh", "Maupay", "Trossard"])
-lineup("Burnley", ["Pope", "Lowton", "Tarkowski", "Mee", "Charlie Taylor", "Aaron Lennon", "Westwood", "Cork", "Mcneil",
-                   "Chris Wood", "Hendrick"])
+       ["Mathew Ryan", "Montoya", "Webster", "Dunk", "Bernardo Fernandes", "Propper", "Dale Stephens", "Jahanbakhsh",
+        "Mooy", "Maupay", "Trossard"])
+lineup("Burnley", ["Pope", "Bardsley", "Tarkowski", "Mee", "Charlie Taylor", "Hendrick", "Westwood", "Cork", "Mcneil",
+                   "Chris Wood", "Jay Rodriguez"])
 lineup("Chelsea",
-       ["Kepa", "Reece James", "Rudiger", "Zouma", "Azpilicueta", "Kante", "Kovacic", "Willian", "Mount", "Hudson-Odoi",
-        "Abraham"])
+       ["Kepa", "Reece James", "Rudiger", "Christensen", "Azpilicueta", "Kanté", "Jorginho", "Kovacic", "Willian",
+        "Hudson-Odoi", "Abraham"])
 lineup("Crystal Palace",
-       ["Guaita", "Martin Kelly", "Tomkins", "Cahill", "Riedewald", "james McCarthy", "Kouyaté", "McArthur", "Meyer",
+       ["Guaita", "Joel Ward", "Tomkins", "Cahill", "Van Aanholt", "Milivojevic", "Kouyaté", "McArthur", "Townsend",
         "Ayew", "Zaha"])
 lineup("Everton",
-       ["Pickford", "Sidibe", "Yerry Mina", "Holgate", "Digne", "Walcott", "tom Davies", "Delph", "Bernard Anício",
+       ["Pickford", "Sidibe", "Yerry Mina", "Holgate", "Digne", "Walcott", "Sigurdsson", "Delph", "Bernard Anício",
         "Calvert-Lewin", "Richarlison"])
-lineup("Leicester",
-       ["Schmeichel", "Ricardo", "Evans", "Soyuncu", "Chilwell", "Choudhury", "Perez", "Tielemans", "Maddison",
-        "Harvey Barnes", "Vardy"])
+lineup("Leicester", ["Schmeichel", "Ricardo", "Evans", "Soyuncu", "Chilwell", "Ndidi", "Perez", "Tielemans", "Maddison",
+                     "Harvey Barnes", "Vardy"])
 lineup("Liverpool", ["Alisson", "Alexander-Arnold", "Van Dijk", "Gomez", "Robertson", "Oxlade-Chamberlain", "Wijnaldum",
-                     "Jordan Henderson", "Firmino", "Mane", "Salah"])
+                     "Jordan Henderson", "Firmino", "Origi", "Salah"])
 lineup("Manchester City",
-       ["Ederson", "Walker", "Otamendi", "Fernandinho", "Benjamin Mendy", "De Bruyne", "Rodrigo", "David Silva",
-        "Bernardo Silva", "Aguero", "Sterling"])
+       ["Ederson", "Walker", "Laporte", "Fernandinho", "Benjamin Mendy", "De Bruyne", "Rodrigo", "David Silva",
+        "Mahrez", "Aguero", "Sterling"])
 lineup("Manchester United",
-       ["De Gea", "Wan-Bissaka", "Lindelöf", "Maguire", "Shaw", "Frederico Rodrigues", "Matic", "Daniel James",
-        "Andreas Pereira", "Martial", "Rashford"])
+       ["De Gea", "Wan-Bissaka", "Lindelöf", "Maguire", "Brandon Williams", "Frederico Rodrigues", "Bruno Fernandes",
+        "Daniel James", "Juan Mata", "Martial", "Andreas Pereira"])
 lineup("Newcastle United",
-       ["Dubravka", "Krafth", "Ciaran Clark", "Fernández", "Lejeune", "Willems", "Hayden", "Sean Longstaff", "Almiron",
-        "Carroll", "Joelinton"])
-lineup("Norwich",
-       ["Krul", "Maximillian Aarons", "Zimmermann", "Hanley", "Byram", "Tettey", "Vrancic", "Buendía", "McLean",
-        "Cantwell", "Idah"])
+       ["Dubravka", "Yedlin", "Fernández", "Lascelles", "Ciaran Clark", "Ritchie", "Saint-Maximin", "Hayden", "Almiron",
+        "Bentaleb", "Joelinton"])
+lineup("Norwich", ["Krul", "Maximillian Aarons", "Zimmermann", "Hanley", "Byram", "Tettey", "Duda", "Buendía", "McLean",
+                   "Cantwell", "Pukki"])
 lineup("Sheffield United",
        ["Dean Henderson", "Basham", "Egan", "O'Connell", "Baldock", "Lundstram", "Norwood", "Fleck", "Stevens",
-        "Mousset", "McGoldrick"])
+        "McBurnie", "Mousset"])
 lineup("Southampton",
-       ["Alex McCarthy", "Cedric", "Jack Stephens", "Bednarek", "Bertrand", "Ward-Prowse", "Hojbjerg", "Armstrong",
-        "Redmond", "Shane Long", "Danny Ings"])
+       ["Alex McCarthy", "Danso", "Jack Stephens", "Bednarek", "Bertrand", "Ward-Prowse", "Hojbjerg", "Djenepo",
+        "Redmond", "Danny Ings", "Shane Long"])
 lineup("Tottenham",
-       ["Gazzaniga", "Aurier", "Davinson Sanchez", "Vertonghen", "Lo Celso", "Dier", "Moura", "Dele Alli", "Sessegnon",
-        "Heung-Min Son"])
+       ["Lloris", "Aurier", "Alderweireld", "Vertonghen", "Tanganga", "Lo Celso", "Dier", "Moura", "Dele Alli",
+        "Lamela", "Heung-Min Son"])
 lineup("Watford",
-       ["Foster", "Mariappa", "Dawson", "Cathcart", "Holebas", "Capoue", "Chalobah", "Sarr", "Doucouré", "Deulofeu",
+       ["Foster", "Mariappa", "Dawson", "Cathcart", "Masina", "Chalobah", "Capoue", "Pussetto", "Doucouré", "Deulofeu",
         "Deeney"])
-lineup("West Ham",
-       ["Fabianski", "Zabaleta", "Balbuena", "Ogbonna", "Cresswell", "Snodgrass", "Noble", "Rice", "Fornals",
-        "Anderson", "Haller"])
+lineup("West Ham", ["Fabianski", "Zabaleta", "Diop", "Ogbonna", "Cresswell", "Lanzini", "Noble", "Rice", "Fornals",
+                    "Michail Antonio", "Haller"])
 lineup("Wolverhampton Wanderers",
-       ["Patrício", "Dendoncker", "Coady", "Saiss", "Doherty", "Neves", "Moutinho", "Jonathan Castro Otto", "Traoré",
+       ["Patrício", "Dendoncker", "Coady", "Boly", "Doherty", "Neves", "Moutinho", "Jonathan Castro Otto", "Traoré",
         "Raul Jimenez", "Neto"])
