@@ -4,7 +4,7 @@ simulatePlayer.py contains functions to calculate the mean xPts for a player in 
 
 import simulateMatch
 from teamFDR import smoothNums
-from getPlayer import getPlayer, playerNames
+from getPlayer import getPlayer, playerNames, getTeam
 from collections import OrderedDict
 from copy import deepcopy
 import json
@@ -28,12 +28,16 @@ xAConstant = np.mean(
 def simulatePts(position, playerName, loc, opponent, SD=5):
     if position == 'DEF' and playerName != 7708:
         SD = 100
+    playerTeam = getTeam(playerName, 'understat')
     playerName = str(playerName)
+    matches = 0
     for team, players in playerDB.items():
         for player in players:
             if player == playerName:
-                playerTeam, matches = team, OrderedDict(playerDB[team][player])
+                matches = OrderedDict(playerDB[team][player])
                 break
+    if not matches:
+        return 2
     for matchID, matchInfo in matches.items():
         if matchInfo['loc'] == 'h':
             matchInfo['teamxG'] = matchDB[matchID]['hxG']
@@ -77,18 +81,22 @@ def simulatePts(position, playerName, loc, opponent, SD=5):
             for matchIndex, matchInfo in matchesTrue.items():
                 yellows += int(matchInfo['yellows'])
         return xPts - max(yellows / len(matchesTrue), 0.1)
-    return 2.001
+    return 2
 
 
 def simulateReturns(position, playerName, loc, opponent, SD=5):
     if position == 'DEF' and playerName != 7708:
         SD = 100
+    playerTeam = getTeam(playerName, 'understat')
     playerName = str(playerName)
+    matches = 0
     for team, players in playerDB.items():
         for player in players:
             if player == playerName:
-                playerTeam, matches = team, OrderedDict(playerDB[team][player])
+                matches = OrderedDict(playerDB[team][player])
                 break
+    if not matches:
+        return [0, 0]
     for matchID, matchInfo in matches.items():
         if matchInfo['loc'] == 'h':
             matchInfo['teamxG'] = matchDB[matchID]['hxG']
