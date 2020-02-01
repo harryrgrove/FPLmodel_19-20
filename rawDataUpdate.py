@@ -4,6 +4,8 @@ It collects data from Understat to produce a team performance database which is 
 It also collects data from u/vaastav's FPL database which is used in my model to forecast Bonus Points.
 """
 
+nextGW = 25
+
 
 def rawDataUpdate():
     import asyncio
@@ -34,7 +36,6 @@ def rawDataUpdate():
     def getPrice(title, inp='fpl'):
         if inp == 'understat' or inp == 'name':
             title = getPlayer(title, inp, 'fpl')
-            print(title)
 
         async def main():
             async with aiohttp.ClientSession() as session:
@@ -51,11 +52,10 @@ def rawDataUpdate():
     with open('xPtsDB.json', 'r') as fp:
         xPtsDB = json.load(fp)
     priceDB = {}
-    for player in xPtsDB['38']:
-        if isStarter(int(player), 'understat') == True and int(player) not in blacklist:
-            print(player)
-            priceDB[player] = getPrice(int(player), 'understat')
-    print(priceDB)
+    for player in [i['understat'] for i in playerNames if i['understat']]:
+        print('\n' * 20)
+        print(getPlayer(int(player), 'understat', 'name') + ' price appended')
+        priceDB[player] = getPrice(int(player), 'understat')
     with open('priceDB.json', 'w') as fp:
         json.dump(priceDB, fp)
 
