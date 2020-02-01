@@ -1,13 +1,12 @@
 from teamFDR import teams
 from simulateMatch import simulateCleanSheet, poisson
 from simulatePlayer import simulateReturns, xAConstant
-from getPlayer import getPlayer, playerNames, getPosition
+from getPlayer import getPlayer, playerNames, getPosition, getTeam
 from random import random
 import numpy as np
 import json
 import csv
 import requests
-from time import time
 
 with open('baselineDB.json', 'r') as fp:
     baselineDB = json.load(fp)
@@ -90,5 +89,7 @@ if __name__ == '__main__':
             baselineArray.append((int(player), baselineDB[team][player][0]))
     for i in sorted(baselineArray, key=lambda i: i[1], reverse=True):
         if i[1] != 0 or i[0] == 5675:
-            print(getPlayer(i[0], 'understat', 'name') + '.' * (40 - len(getPlayer(i[0], 'understat', 'name'))) + str(
-                round(i[1], 1)))
+            print(getPosition(i[0], 'understat'),
+                  getPlayer(i[0], 'understat', 'name') + '.' * (30 - len(getPlayer(i[0], 'understat', 'name'))) + str(
+                      round(i[1], 1)))
+    print(np.mean([i[1] for i in baselineArray if getPosition(i[0], 'understat') == 'FOR' and i[1] != 0]))
