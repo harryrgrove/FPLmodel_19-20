@@ -1,5 +1,7 @@
 """SimulateGW.py calculates expected points for each player expected to start in a given GW, with bonus points added"""
 
+from rawDataUpdate import nextGW
+from simulateMatch import simulate
 from simulatePlayer import simulatePts, simulateFixtures, simulateTeam, simulateTeamFixtures, fixtureDB
 from getPlayer import getPlayer, playerNames, getPosition
 from bonus import simulateBonus, lineups
@@ -17,6 +19,7 @@ for GW in range(22, 39):
         if fixtureDB[team][list(fixtureDB[team])[GW - 22]]['loc'] == 'h':
             fixtureDict[GW].append([team, fixtureDB[team][list(fixtureDB[team])[GW - 22]]['opponent']])
 fixtureDict[24].append(['West Ham', 'Liverpool'])
+fixtureDict[28].remove(['Manchester City', 'Arsenal'])
 
 
 def simulateGW(gw, SD):
@@ -28,6 +31,7 @@ def simulateGW(gw, SD):
 
     for fixture in fixtures:
         print(fixture[0] + '.' * (44 - len(fixture[0] + fixture[1])) + fixture[1])
+        print(simulate(fixture[0], fixture[1]))
 
     for fixture in fixtures:
         for player, pts in simulateBonus(fixture[0], fixture[1], SD).items():
@@ -35,7 +39,6 @@ def simulateGW(gw, SD):
     print('\n' * 2)
     print('Most bonus points:', [(getPlayer(i[0], 'understat', 'name'), i[1]) for i in
                                  sorted(list(playerDict.items()), key=lambda i: i[1], reverse=True)[:10]])
-
     xPtsDB[str(gw)] = {}
     for fixture in fixtures:
         for player, pts in simulateBonus(fixture[0], fixture[1], SD).items():
@@ -62,6 +65,6 @@ def simulateGW(gw, SD):
 
 
 if __name__ == '__main__':
-    for i in range(22, 39):
+    for i in range(nextGW, 39):
         print('\n' * 2, i)
         simulateGW(i, 10)
