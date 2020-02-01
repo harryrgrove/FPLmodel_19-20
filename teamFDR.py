@@ -37,8 +37,9 @@ def newDataCheck():  # This function checks that the databases I'm using are cor
         return True  # If no data files exist, update all data = True
 
 
-if newDataCheck():
-    rawDataUpdate.rawDataUpdate()
+# if newDataCheck():
+#   rawDataUpdate.rawDataUpdate()
+
 
 with open('teamDB.json', 'r') as fp:
     teamDB = json.load(fp)  # Imports saved team data into script
@@ -152,22 +153,6 @@ def meanFDR(FDRMatrix):  # Calculates the mean fixture difficulty of each team g
                 FDRMatrix[team][fence][loc] = total / len(FDRMatrix[team][fence][loc])  # Divide to obtain mean
     return FDRMatrix
 
-
-meanFDR = meanFDR(FDR)  # Calculate the mean FDR of the season so far
-FDRTable = PrettyTable()  # Creates PrettyTable to present the mean FDR over the season
-FDRTable.field_names = ["Team", "Offence at Home", "Offence away", "Defence at Home",
-                        "Defence Away"]  # Creates table header
-for team in sorted(teams,
-                   key=lambda i: meanFDR[i]['offence']['home'] / sum([meanFDR[t]['defence']['away'] for t in teams]) +
-                                 meanFDR[i]['offence']['away'] / sum([meanFDR[t]['defence']['home'] for t in teams]) -
-                                 meanFDR[i]['defence']['home'] / sum([meanFDR[t]['offence']['away'] for t in teams]) -
-                                 meanFDR[i]['defence']['away'] / sum([meanFDR[t]['offence']['home'] for t in teams]))[
-            ::-1]:  # Sorts teams in first column by overall strength
-    FDRTable.add_row([team, str(meanFDR[team]['offence']['home'])[:5], str(meanFDR[team]['offence']['away'])[:5],
-                      str(meanFDR[team]['defence']['home'])[:5],
-                      str(meanFDR[team]['defence']['away'])[:5]])  # Adds each row of data to the table
-print('\n' * 2 + 'Sorted by Mean Overall Strength')
-print(FDRTable)
 
 FDRTable = PrettyTable()  # Creates PrettyTable to present the current FDR
 FDRTable.field_names = ["Team", "Offence at Home", "Offence away", "Defence at Home",
