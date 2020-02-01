@@ -1,5 +1,6 @@
 from pulp import *
 import json
+from rawDataUpdate import nextGW
 from bonus import lineups
 from getPlayer import playerNames, getPrice, isStarter, getPlayer, getTeam, getPosition, blacklist
 from teamFDR import teams
@@ -11,27 +12,26 @@ with open('priceDB.json', 'r') as fp:
     priceDB = json.load(fp)
 
 
-def compileGWs(start=22, end=38):
-    comp = {player: 0 for player in xPtsDB['38']}
+def compileGWs(start=nextGW, end=38):
+    comp = {player: 0 for player in xPtsDB[str(start)]}
     for GW in range(start, end + 1):
         for player, xPts in xPtsDB[str(GW)].items():
             comp[player] += xPts
     return comp
 
 
-priceDB = {i: priceDB[i] for i in priceDB if int(i) not in blacklist}
+priceDB = {i: priceDB[i] for i in priceDB if int(i) not in blacklist and isStarter(int(i), 'understat') == True}
 
-GWStart, GWEnd = 22, 22
-TV = 96.6
+GWStart, GWEnd = nextGW, nextGW
+TV = 100
 
 teamCodes = {team: i for team in teams for i in range(len(teams))}
 
-players = [player for player in priceDB]
+DB = compileGWs(GWStart, GWEnd)
+players = [player for player in DB if int(player) not in blacklist and isStarter(int(player), 'understat') == True]
 
 prob = LpProblem("optimiseTeam", LpMaximize)
 useVars = LpVariable.dicts("usePlayer", players, 0, 1, LpBinary)
-
-DB = compileGWs(GWStart, GWEnd)
 
 prob += lpSum([DB[j] * useVars[j] for j in useVars])
 prob += lpSum(priceDB[j] * useVars[j] for j in useVars) <= TV - 3.9 * (
@@ -80,4 +80,4 @@ for player in sorted([player for player in team if getPosition(int(player), 'und
 
 for player in team:
     TV -= priceDB[player]
-print(round(TV))
+print(round(TV, 1))
